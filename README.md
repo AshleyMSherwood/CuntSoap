@@ -2,4 +2,10 @@
 
 ### SPA for Cunt Soap
 
-Yay!
+
+### Credentials
+
+Log in to the "test" account with the following credentials:
+
+email:`user@cuntsoap.com`
+password: `abc123OMG!`
