@@ -38,11 +38,17 @@ angular.module('unicorn')
       templateUrl: 'templates/account/signup.html',
       controller: 'SignupCtrl'
     })
+    .state('products', {
+      url: '/products',
+      templateUrl: 'templates/brochure/products.html',
+      controller: 'ProductsCtrl'
+    })
     .state('profile', {
       url: '/profile',
       templateUrl: 'templates/account/profile.html',
       controller: 'ProfileCtrl'
     });
+
 
     /******************************
     * Standard url routing
