@@ -5,8 +5,22 @@ angular.module('cloudsdk').factory('Cloud', [
  * File Dependencies
  */
 
-         '$http', '$timeout', '$q', 'cloudsdk_endpoints',
-function( $http,  $timeout, $q, cloudsdk_endpoints) {
+         '$http', '$timeout', '$q', 'cloudsdk_endpoints', 'cloudstrapper_endpoints',
+function( $http,  $timeout, $q, cloudsdk_endpoints, cloudstrapper_endpoints) {
+
+
+  // Construct fake request objects that are compatible with
+  // the utilities created for real cloudSdk endpoints.
+  var bootstrapRoutes = [];
+  Object.keys(cloudstrapper_endpoints).forEach(function(oneRouteAndMethod){
+    var fakeRequest = {
+      method: oneRouteAndMethod.replace(/^\s*([^\/\s]+)\s*\/.*$/, '$1'),
+      url: oneRouteAndMethod.replace(/^\s*[^\/\s]+\s*\/(.*)$/, '/$1'),
+      fn: cloudstrapper_endpoints[oneRouteAndMethod]
+    };
+    fakeRequest.urlParams = fakeRequest.url.match(/:([^\/\s]+)/ig);
+    bootstrapRoutes.push(fakeRequest);
+  });
 
   // Enabling `withCredentials` will cause the browser to send cookies
   // $http.defaults.withCredentials = true;
@@ -82,11 +96,51 @@ function( $http,  $timeout, $q, cloudsdk_endpoints) {
         };
       }
 
-      return buildCloudRequestPromise(requestObj);
+      // Check and see if a bootstrapped method is being called.
+      // If so, return a promise which resolves after a random timeout
+      // and calls the provided utility method.
+      var isBootstrapped;
+      bootstrapRoutes.forEach(function(oneBoostrapRouteObject){
+        if (oneBoostrapRouteObject.method == requestObj.method && oneBoostrapRouteObject.url == requestObj.url){
+          isBootstrapped = oneBoostrapRouteObject;
+        }
+      });
+
+      if (isBootstrapped){
+        return buildBootstrappedPromise(requestObj,isBootstrapped);
+      } else {
+        return buildCloudRequestPromise(requestObj);
+      }
+
     };
   }, api);
 
   return api;
+
+  // Fake http call for bootstrapped cloud methods.
+  function buildBootstrappedPromise(request,bootstrappedRequest){
+    var routeParameters = getRouteParameters({
+      urlTemplate: request.url,
+      params: request.params
+    });
+
+    // Then delete them from the `params` object
+    Object.keys(routeParameters).forEach(function (paramName){
+      delete request.params[paramName];
+    });
+
+    var deferred = $q.defer();
+
+    var howLong = Math.floor(Math.random()*2500+1200);
+
+    window.setTimeout(function(){
+      // console.log('calling:',bootstrappedRequest.fn,'with params:',routeParameters);
+      deferred.resolve(bootstrappedRequest.fn.apply(this,[routeParameters]));
+
+    },howLong);
+
+    return deferred.promise;
+  }
 
   function buildCloudRequestPromise(request) {
 

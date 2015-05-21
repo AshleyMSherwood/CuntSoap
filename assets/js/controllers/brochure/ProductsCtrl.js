@@ -12,14 +12,28 @@
 
 angular.module('unicorn')
 .controller('ProductsCtrl', [
-        '$scope', '$rootScope', '$state', '$timeout', 'uiMe', 'uiList', 'uiErrorBus',
-function($scope, $rootScope, $state, $timeout, uiMe , uiList, uiErrorBus) {
+        '$scope', '$rootScope', '$state', '$timeout', 'uiMe', 'uiList', 'uiErrorBus', 'uiProducts',
+function($scope, $rootScope, $state, $timeout, uiMe , uiList, uiErrorBus, uiProducts) {
 
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
   // When the application is initially rendered
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
 
-  
+  $scope.uiProducts = uiProducts;
+
+  uiProducts.fetch()
+  .then(function gotProducts(){
+
+    // do something
+
+  }).catch(function errorOccured(err){
+
+    // do something
+
+  })
+  .finally(function eitherWay(){
+    // do something
+  });
 
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
   // DOM Events
@@ -27,7 +41,7 @@ function($scope, $rootScope, $state, $timeout, uiMe , uiList, uiErrorBus) {
 
   $scope.intent = angular.extend($scope.intent||{}, {
 
-    
+
 
   });
 

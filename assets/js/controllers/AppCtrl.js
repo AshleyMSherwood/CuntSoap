@@ -12,12 +12,14 @@
 
 angular.module('unicorn')
 .controller('AppCtrl', [
-        '$scope', '$rootScope', '$state', '$q', '$mdSidenav', 'uiMe', 'uiList', 'uiErrorBus',
-function($scope, $rootScope, $state, $q, $mdSidenav, uiMe, uiList, uiErrorBus) {
+        '$scope', '$rootScope', '$state', '$q', '$mdSidenav', 'uiMe', 'uiList', 'uiErrorBus', 'uiProducts', 'Cloud',
+function($scope, $rootScope, $state, $q, $mdSidenav, uiMe, uiList, uiErrorBus, uiProducts, Cloud) {
 
   window.uiMe = uiMe;
   $scope.uiMe = uiMe;
 
+  window.uiProducts = uiProducts;
+  window.Cloud = Cloud;
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
   // When the application is initially rendered
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
@@ -27,10 +29,10 @@ function($scope, $rootScope, $state, $q, $mdSidenav, uiMe, uiList, uiErrorBus) {
   $rootScope.appReady = appReady.promise;
 
   $rootScope.appReady.then(function onReady(){
-    
+
   })
   .catch(function onError(err){
-    
+
   })
   .finally(function eitherWay(){
     uiMe.syncing.app = false;

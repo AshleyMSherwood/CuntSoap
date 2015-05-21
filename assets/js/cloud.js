@@ -32,7 +32,9 @@ angular.module('cloudsdk').endpoints({
   updateMyProfile: 'PUT /me',
   facebookAuth: 'GET /user/facebook',
   integrateFacebook: 'POST /integration/facebook',
-  getIntegration: 'GET /integration/user'
+  getIntegration: 'GET /integration/user',
+
+  getAllProducts: 'GET /products'
 
   // Items
   // listItems: 'GET /item',
