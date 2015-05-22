@@ -38,6 +38,11 @@ angular.module('unicorn')
       templateUrl: 'templates/account/signup.html',
       controller: 'SignupCtrl'
     })
+        .state('listyourown', {
+      url: '/listyourown',
+      templateUrl: 'templates/account/listyourown.html',
+      controller: 'ListYourOwnCtrl'
+    })
     .state('products', {
       url: '/products',
       templateUrl: 'templates/brochure/products.html',
