@@ -44,5 +44,8 @@ function($scope, $rootScope, $state, $timeout, uiMe , uiList, uiErrorBus, uiProd
 
 
   });
+//other//
+
+  console.log(uiProducts);
 
 }]);

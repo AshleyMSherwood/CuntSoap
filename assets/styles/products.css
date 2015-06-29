@@ -1,0 +1,15 @@
+.products{
+
+	display: inline-block;
+	vertical-align: top;
+	height: 300px;
+	width: 300px;
+
+};
+
+.products img{
+
+	height: 50%;
+	width: 50%;
+
+};
