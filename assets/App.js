@@ -7,7 +7,8 @@ var dependencies = [
 	'ui.bootstrap',
 	'ngTouch',
 	'ngAnimate',
-  'cloudsdk'
+  'cloudsdk',
+  'ngMaterial'
 ];
 
 

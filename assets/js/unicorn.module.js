@@ -2,15 +2,6 @@
  * Module dependencies
  */
 
-var dependencies = [
-	'ui.router',
-	'ngTouch',
-	'ngAnimate',
-	'ngMaterial',
-  'cloudsdk',
-  'lodash'
-];
-
 /**
  * Unicorn
  *
@@ -20,10 +11,17 @@ var dependencies = [
  * @description  An angular module for a web UI.
  */
 
-angular.module('unicorn', dependencies)
+angular.module('unicorn', [
+  'ui.router',
+  'ngTouch',
+  'ngAnimate',
+  'ngMaterial',
+  'cloudsdk',
+  'lodash'
+]);
 
 // Config angular material design
-.config(function($mdThemingProvider, $locationProvider) {
+angular.module('unicorn').config(function($mdThemingProvider, $locationProvider) {
   $mdThemingProvider.theme('default')
     .primaryPalette('deep-purple')
     .accentPalette('pink')

@@ -1,15 +1,28 @@
-.products{
+
+.productsClass {
 
 	display: inline-block;
 	vertical-align: top;
-	height: 300px;
-	width: 300px;
+	height: 350px;
+	width: 350px;
+	margin: 5px;
+	border: 1px solid black;
+	background-position: center center;
+	/*padding: 100%;*/
+	position: relative;
 
-};
+}
 
-.products img{
+a {
+	position: absolute; 
+    bottom: 0; 
 
-	height: 50%;
-	width: 50%;
+}
 
-};
+.productDescription {
+	background: white;
+	color: orange;
+	position: absolute; 
+    bottom: 0; 
+}
+

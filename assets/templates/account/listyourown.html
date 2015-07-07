@@ -1,6 +1,10 @@
 <!-- List your own soap -->
+<head>
+<link rel="stylesheet" type="text/css" href="listYourOwn.css">
+</head>
 
-<h1 class="md-display-2" hide show-gt-sm>List Your Own Soap</h1>
+<!-- <body ng-app="">
+ --><h1 class="md-display-2" hide show-gt-sm>List Your Own Soap</h1>
 <md-content id="home" layout-padding layout="row" layout-sm="column">
 
 	<div flex class="welcome">
@@ -9,12 +13,142 @@
 	</div>
 
 	<md-content flex class="why">
-	
+
 			<h1 class="md-display-2" hide-gt-sm>Cunt Soap</h1>
 
 			<p class="md-body-1 lead">Step 2 of 6.  Build Your Own Soap</p>
 
-<!--  			<md-list>
+<!-- first forms trial: (7/2/15)-->
+<!-- Name and Description fields: -->
+	<div layout layout-sm="column">
+        <md-input-container flex>
+          <label>Name It</label>
+          <input ng-model="user.firstName">
+        </md-input-container>
+    </div>
+    <div layout layout-sm="column">
+        <md-input-container flex>
+          <label>Description</label>
+          <input ng-model="user.description">
+        </md-input-container>
+    </div>
+
+<!-- Choose Two Additives checkboxes: -->
+  <div class="md-padding">
+    <fieldset class="standard">
+      <legend>Choose up to 2 additives <code></code></legend>
+      <div layout="row" layout-wrap>
+        <div flex="50">
+          <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
+            Additive 1 
+          </md-checkbox>
+        </div>
+        <div flex="50">
+          <md-checkbox ng-model="data.cb2" aria-label="Checkbox 2">
+            Additive 2 
+          </md-checkbox>
+        </div>
+        <div flex="50">
+          <md-checkbox ng-model="data.cb3" aria-label="Checkbox 3">
+            Additive 3 
+          </md-checkbox>
+        </div>
+        <div flex="50">
+          <md-checkbox ng-model="data.cb4" aria-label="Checkbox 4">
+            Additive 4 
+          </md-checkbox>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+<!-- another way of providing options for "choose up to 2 additives" -->
+<!--     <div class="md-padding">
+  <div>
+    <h1 class="md-title">Pick Up To 2 Additives</h1>
+    <div layout="row">
+      <md-select ng-model="size" placeholder="One">
+        <md-option ng-repeat="size in sizes" value="{{size}}">{{size}}</md-option>
+      </md-select>
+      <md-select ng-model="topping" placeholder="Two">
+        <md-optgroup label="Meats">
+          <md-option ng-value="topping.name" ng-repeat="topping in toppings | filter: {category: 'meat' }">{{topping.name}}</md-option>
+        </md-optgroup>
+        <md-optgroup label="Veggies">
+          <md-option ng-value="topping.name" ng-repeat="topping in toppings | filter: {category: 'veg' }">{{topping.name}}</md-option>
+        </md-optgroup>
+      </md-select>
+    </div>
+ -->
+ <!-- Choose Color Drop Down: -->
+  <div class="md-menu-demo">
+    <div class="menu-demo-container" layout-align="center center" layout="column">
+      <h2 class="md-title">Simple dropdown menu</h2>
+      <p>Note that applying the <code>md-menu-origin</code> and <code>md-menu-align-target</code> attributes ensure that the menu elements align</p>
+      <md-menu>
+        <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="$mdOpenMenu()">
+          <md-icon md-menu-origin md-svg-icon="call:phone"></md-icon>
+        </md-button>
+        <md-menu-content width="4">
+          <md-menu-item>
+            <md-button ng-click="ctrl.redial($event)">
+              <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+              Redial
+            </md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button disabled="disabled" ng-click="ctrl.checkVoicemail()">
+              <md-icon md-svg-icon="call:voicemail"></md-icon>
+              Check voicemail
+            </md-button>
+          </md-menu-item>
+          <md-menu-divider></md-menu-divider>
+          <md-menu-item>
+            <md-button ng-click="ctrl.toggleNotifications()">
+              <md-icon md-svg-icon="social:notifications-{{ctrl.notificationsEnabled ? 'off' : 'on'}}"></md-icon>
+              {{ctrl.notificationsEnabled ? 'Disable' : 'Enable' }} notifications
+            </md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+    </div>
+  </div>
+
+<!-- Pick your charity Radio Button List -->
+  <div>
+    <form ng-submit="submit()">
+      <p>Selected Value: <span class="radioValue">{{ data.group1 }}</span> </p>
+      <md-radio-group ng-model="data.group1">
+        <md-radio-button value="Apple" class="md-primary">Apple</md-radio-button>
+        <md-radio-button value="Banana"> Banana </md-radio-button>
+        <md-radio-button value="Mango">Mango</md-radio-button>
+      </md-radio-group>
+      <hr />
+      <p>Selected Value: <span class="radioValue">{{ data.group2 }}</span></p>
+      <md-radio-group ng-model="data.group2" class="md-primary">
+          <md-radio-button ng-repeat="d in radioData"
+                           ng-value="d.value"
+                           ng-disabled=" d.isDisabled ">
+              {{ d.label }}
+          </md-radio-button>
+      </md-radio-group>
+      <p>
+        <md-button class="md-raised" ng-click="addItem()" type="button">Add</md-button>
+        <md-button class="md-raised" ng-click="removeItem()" type="button">Remove</md-button>
+      </p>
+      <hr />
+      <p style="margin-bottom: 0;">Graphic radio buttons need to be labeled with the <code>aria-label</code> attribute.</p>
+      <p style="margin-top: 0;">Selected Avatar: <span class="radioValue">{{ data.group3 }}</span></p>
+      <md-radio-group ng-model="data.group3">
+        <md-radio-button ng-repeat="it in avatarData"
+                         ng-value="it.value"
+                         aria-label="{{it.title}}">
+            <md-icon md-svg-icon="{{it.id}}"></md-icon>
+        </md-radio-button>
+      </md-radio-group>
+    </form>
+  </div>
+<!-- Don't need this stuff... from seed app
+  			<md-list>
 			  <md-list-item class="md-2-line">
 			    <md-checkbox aria-label="Material Design" ng-model="item.design" ng-init="item.design = true"></md-checkbox>
 			    <div class="md-list-item-text">
@@ -44,5 +178,5 @@
 	</md-content>
 
 </md-content>
-
+</body>
 

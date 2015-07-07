@@ -1,13 +1,18 @@
+
 <head>
 <link rel="stylesheet" type="text/css" href="products.css">
 </head>
 
-<body>
+<body ng-app="">
 <h1>Products</h1>
 
-	<div class= "products" ng-repeat= "product in uiProducts">
-		<img src="{{product.photoUrl}}" alt="{{product.id}}">
-		<p>{{product.description}} </p>
+	<div class="productsClass" ng-repeat="product in uiProducts" ng-style="{'background-image':'url({{product.photoUrl}})'}" style="background-repeat: no-repeat">
+<!-- 		<img class="imageClass" src="{{product.photoUrl}}" alt="{{product.id}}"> -->
+		
+		<p ng-show="showme" class="productDescription"> <button ng-click="showme=false">x</button>
+			{{product.description}} 
+		</p>
+		<a href="" ng-click="showme=true"><b>{{product.title}}</b></a> 
 	</div>
 
 </body>

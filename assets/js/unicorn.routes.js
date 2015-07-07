@@ -38,7 +38,7 @@ angular.module('unicorn')
       templateUrl: 'templates/account/signup.html',
       controller: 'SignupCtrl'
     })
-        .state('listyourown', {
+      .state('listyourown', {
       url: '/listyourown',
       templateUrl: 'templates/account/listyourown.html',
       controller: 'ListYourOwnCtrl'
