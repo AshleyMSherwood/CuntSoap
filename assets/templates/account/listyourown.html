@@ -1,16 +1,13 @@
-<!-- List your own soap -->
-<head>
-<link rel="stylesheet" type="text/css" href="listYourOwn.css">
-</head>
+<!-- List Your Own Soap View-->
+<div flex class="welcome">
+    <img src="/images/soap.jpg">
+    <p class="md-body-1"><strong>{{ uiMe.username || 'Hooray' }}!</strong> </p>
+  </div>
 
-<!-- <body ng-app="">
- --><h1 class="md-display-2" hide show-gt-sm>List Your Own Soap</h1>
+<h1 class="md-display-2" hide show-gt-sm>List Your Own Soap</h1>
 <md-content id="home" layout-padding layout="row" layout-sm="column">
 
-	<div flex class="welcome">
-		<img src="/images/soap.jpg">
-		<p class="md-body-1"><strong>{{ uiMe.username || 'Hooray' }}!</strong> </p>
-	</div>
+	
 
 	<md-content flex class="why">
 
@@ -82,71 +79,32 @@
  <!-- Choose Color Drop Down: -->
   <div class="md-menu-demo">
     <div class="menu-demo-container" layout-align="center center" layout="column">
-      <h2 class="md-title">Simple dropdown menu</h2>
-      <p>Note that applying the <code>md-menu-origin</code> and <code>md-menu-align-target</code> attributes ensure that the menu elements align</p>
-      <md-menu>
-        <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="$mdOpenMenu()">
-          <md-icon md-menu-origin md-svg-icon="call:phone"></md-icon>
-        </md-button>
-        <md-menu-content width="4">
-          <md-menu-item>
-            <md-button ng-click="ctrl.redial($event)">
-              <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
-              Redial
-            </md-button>
-          </md-menu-item>
-          <md-menu-item>
-            <md-button disabled="disabled" ng-click="ctrl.checkVoicemail()">
-              <md-icon md-svg-icon="call:voicemail"></md-icon>
-              Check voicemail
-            </md-button>
-          </md-menu-item>
-          <md-menu-divider></md-menu-divider>
-          <md-menu-item>
-            <md-button ng-click="ctrl.toggleNotifications()">
-              <md-icon md-svg-icon="social:notifications-{{ctrl.notificationsEnabled ? 'off' : 'on'}}"></md-icon>
-              {{ctrl.notificationsEnabled ? 'Disable' : 'Enable' }} notifications
-            </md-button>
-          </md-menu-item>
-        </md-menu-content>
-      </md-menu>
-    </div>
-  </div>
+      <h2 class="md-title">Choose Your Color</h2>
+      <p>These are the colors you can choose from:</p>
+<div layout="column" layout-align="center center" flex="" class="selectdemoBasicUsage">
+<md-select placeholder="Choose Your Color">
+     <md-option value="1">Red</md-option>
+     <md-option value="7">Green</md-option>
+ </md-select>
+</div>
 
 <!-- Pick your charity Radio Button List -->
   <div>
     <form ng-submit="submit()">
-      <p>Selected Value: <span class="radioValue">{{ data.group1 }}</span> </p>
+      <p>Pick Your Charity <span class="radioValue"></span> </p>
       <md-radio-group ng-model="data.group1">
-        <md-radio-button value="Apple" class="md-primary">Apple</md-radio-button>
-        <md-radio-button value="Banana"> Banana </md-radio-button>
-        <md-radio-button value="Mango">Mango</md-radio-button>
-      </md-radio-group>
-      <hr />
-      <p>Selected Value: <span class="radioValue">{{ data.group2 }}</span></p>
-      <md-radio-group ng-model="data.group2" class="md-primary">
-          <md-radio-button ng-repeat="d in radioData"
-                           ng-value="d.value"
-                           ng-disabled=" d.isDisabled ">
-              {{ d.label }}
-          </md-radio-button>
-      </md-radio-group>
-      <p>
-        <md-button class="md-raised" ng-click="addItem()" type="button">Add</md-button>
-        <md-button class="md-raised" ng-click="removeItem()" type="button">Remove</md-button>
-      </p>
-      <hr />
-      <p style="margin-bottom: 0;">Graphic radio buttons need to be labeled with the <code>aria-label</code> attribute.</p>
-      <p style="margin-top: 0;">Selected Avatar: <span class="radioValue">{{ data.group3 }}</span></p>
-      <md-radio-group ng-model="data.group3">
-        <md-radio-button ng-repeat="it in avatarData"
-                         ng-value="it.value"
-                         aria-label="{{it.title}}">
-            <md-icon md-svg-icon="{{it.id}}"></md-icon>
-        </md-radio-button>
+        <md-radio-button value="C1">Charity 1</md-radio-button>
+        <md-radio-button value="C2">Charity 2</md-radio-button>
+        <md-radio-button value="C3">Charity 3</md-radio-button>
+        <md-radio-button value="C4">Charity 4</md-radio-button>
+        <md-radio-button value="C5">Charity 5</md-radio-button>
       </md-radio-group>
     </form>
   </div>
+
+<!-- Submit Button -->
+ <md-button class="md-raised">Submit</md-button>
+
 <!-- Don't need this stuff... from seed app
   			<md-list>
 			  <md-list-item class="md-2-line">
