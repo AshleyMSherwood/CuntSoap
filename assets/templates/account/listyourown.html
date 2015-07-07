@@ -81,34 +81,15 @@
     <div class="menu-demo-container" layout-align="center center" layout="column">
       <h2 class="md-title">Choose Your Color</h2>
       <p>These are the colors you can choose from:</p>
-      <md-menu>
-        <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="$mdOpenMenu()">
-          <md-icon md-menu-origin md-svg-icon="call:phone"></md-icon>
-        </md-button>
-        <md-menu-content width="4">
-          <md-menu-item>
-            <md-button ng-click="ctrl.redial($event)">
-              <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
-              RED
-            </md-button>
-          </md-menu-item>
-          <md-menu-item>
-            <md-button ng-click="ctrl.checkVoicemail()">
-              <md-icon md-svg-icon="call:voicemail"></md-icon>
-              GREEN
-            </md-button>
-          </md-menu-item>
-          <md-menu-divider></md-menu-divider>
-          <md-menu-item>
-            <md-button ng-click="ctrl.toggleNotifications()">
-              <md-icon md-svg-icon="social:notifications-{{ctrl.notificationsEnabled ? 'off' : 'on'}}"></md-icon>
-              PINK
-            </md-button>
-          </md-menu-item>
-        </md-menu-content>
-      </md-menu>
-    </div>
-  </div>
+<div layout="column" layout-align="center center" flex="" class="selectdemoBasicUsage">
+<md-select placeholder="Pick" ng-model="someVal">
+     <md-option value="1">Profile</md-option>
+     <md-select placeholder="Pick" ng-model="someVal">
+        <md-option value="3">sub header</md-option>
+     </md-select>
+     <md-option value="7">LogOut</md-option>
+ </md-select>
+</div>
 
 <!-- Pick your charity Radio Button List -->
   <div>
@@ -118,6 +99,8 @@
         <md-radio-button value="C1" class="md-primary">Charity 1</md-radio-button>
         <md-radio-button value="C2">Charity 2</md-radio-button>
         <md-radio-button value="C3">Charity 3</md-radio-button>
+        <md-radio-button value="C4">Charity 4</md-radio-button>
+        <md-radio-button value="C5">Charity 5</md-radio-button>
       </md-radio-group>
     </form>
   </div>
