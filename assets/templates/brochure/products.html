@@ -6,7 +6,7 @@
 <body ng-app="">
 <h1>Products</h1>
 
-	<div class="productsClass" ng-repeat="product in uiProducts" ng-style="{'background-image':'url({{product.photoUrl}})'}" style="background-repeat: no-repeat">
+	<div class="productsClass" ng-repeat="product in uiProducts | limitTo: 8" ng-style="{'background-image':'url({{product.photoUrl}})'}" style="background-repeat: no-repeat">
 <!-- 		<img class="imageClass" src="{{product.photoUrl}}" alt="{{product.id}}"> -->
 		
 		<p ng-show="showme" class="productDescription"> <button ng-click="showme=false">x</button>

@@ -4,139 +4,86 @@
     <p class="md-body-1"><strong>{{ uiMe.username || 'Hooray' }}!</strong> </p>
   </div>
 
-<h1 class="md-display-2" hide show-gt-sm>List Your Own Soap</h1>
+<h1 class="md-display-2" hide show-gt-sm>List Your Own Cunt!!!</h1>
+
 <md-content id="home" layout-padding layout="row" layout-sm="column">
+  <md-content flex class="why">
 
-	
 
-	<md-content flex class="why">
-
-			<h1 class="md-display-2" hide-gt-sm>Cunt Soap</h1>
-
-			<p class="md-body-1 lead">Step 2 of 6.  Build Your Own Soap</p>
+			<p class="md-body-1 lead">Step 2 of 6.  Build Your Soap</p>
 
 <!-- first forms trial: (7/2/15)-->
 <!-- Name and Description fields: -->
 	<div layout layout-sm="column">
-        <md-input-container flex>
-          <label>Name It</label>
-          <input ng-model="user.firstName">
-        </md-input-container>
-    </div>
-    <div layout layout-sm="column">
-        <md-input-container flex>
-          <label>Description</label>
-          <input ng-model="user.description">
-        </md-input-container>
-    </div>
+      <md-input-container flex>
+        <label>Name It</label>
+        <input ng-model="user.firstName">
+      </md-input-container>
+  </div>
+  <div layout layout-sm="column">
+      <md-input-container flex>
+        <label>Description</label>
+        <input ng-model="user.description">
+      </md-input-container>
+  </div>
 
 <!-- Choose Two Additives checkboxes: -->
   <div class="md-padding">
     <fieldset class="standard">
-      <legend>Choose up to 2 additives <code></code></legend>
+      <legend>Pick up to 2 additives: <code></code></legend>
       <div layout="row" layout-wrap>
         <div flex="50">
           <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
-            Additive 1 
+            Glitters!
           </md-checkbox>
         </div>
         <div flex="50">
           <md-checkbox ng-model="data.cb2" aria-label="Checkbox 2">
-            Additive 2 
+            Sparkle Dust
           </md-checkbox>
         </div>
         <div flex="50">
           <md-checkbox ng-model="data.cb3" aria-label="Checkbox 3">
-            Additive 3 
+            Fancy Stuff 
           </md-checkbox>
         </div>
         <div flex="50">
           <md-checkbox ng-model="data.cb4" aria-label="Checkbox 4">
-            Additive 4 
+            Extra Love
           </md-checkbox>
         </div>
       </div>
     </fieldset>
   </div>
-<!-- another way of providing options for "choose up to 2 additives" -->
-<!--     <div class="md-padding">
-  <div>
-    <h1 class="md-title">Pick Up To 2 Additives</h1>
-    <div layout="row">
-      <md-select ng-model="size" placeholder="One">
-        <md-option ng-repeat="size in sizes" value="{{size}}">{{size}}</md-option>
-      </md-select>
-      <md-select ng-model="topping" placeholder="Two">
-        <md-optgroup label="Meats">
-          <md-option ng-value="topping.name" ng-repeat="topping in toppings | filter: {category: 'meat' }">{{topping.name}}</md-option>
-        </md-optgroup>
-        <md-optgroup label="Veggies">
-          <md-option ng-value="topping.name" ng-repeat="topping in toppings | filter: {category: 'veg' }">{{topping.name}}</md-option>
-        </md-optgroup>
-      </md-select>
-    </div>
- -->
- <!-- Choose Color Drop Down: -->
-  <div class="md-menu-demo">
-    <div class="menu-demo-container" layout-align="center center" layout="column">
-      <h2 class="md-title">Choose Your Color</h2>
-      <p>These are the colors you can choose from:</p>
-<div layout="column" layout-align="center center" flex="" class="selectdemoBasicUsage">
-<md-select placeholder="Pick" ng-model="someVal">
-     <md-option value="1">Profile</md-option>
-     <md-select placeholder="Pick" ng-model="someVal">
-        <md-option value="3">sub header</md-option>
-     </md-select>
-     <md-option value="7">LogOut</md-option>
- </md-select>
-</div>
 
-<!-- Pick your charity Radio Button List -->
-  <div>
+ <!-- Choose Color Drop Down: -->
+
+  <div class="menu-demo-container" layout="column"> Color:
+    <select style="display:inline;" ng-model="model.id">
+      <option style="display:none;" value="" disabled selected>Color:</option>
+      <option value="red">Red</option>
+      <option value="blue">Blue</option>
+      <option value="pink">Pink</option>
+    </select>
+  </div>
+
+<!-- Pick your charity Radio Button -->
+  <div class="menu-demo-container" layout="column">
     <form ng-submit="submit()">
-      <p>Pick Your Charity <span class="radioValue">{{ data.group1 }}</span> </p>
+      <p>Pick Your Charity:</p>
       <md-radio-group ng-model="data.group1">
-        <md-radio-button value="C1" class="md-primary">Charity 1</md-radio-button>
-        <md-radio-button value="C2">Charity 2</md-radio-button>
-        <md-radio-button value="C3">Charity 3</md-radio-button>
-        <md-radio-button value="C4">Charity 4</md-radio-button>
-        <md-radio-button value="C5">Charity 5</md-radio-button>
+        <md-radio-button value="C1">National Breast Cancer Research</md-radio-button>
+        <md-radio-button value="C2">Girls Not Brides</md-radio-button>
+        <md-radio-button value="C3">Ovarian Cancer Research Fund</md-radio-button>
+        <md-radio-button value="C4">**Suggest Your Own**</md-radio-button>
       </md-radio-group>
     </form>
   </div>
 
 <!-- Submit Button -->
- <md-button class="md-raised">Submit</md-button>
+  <md-button class="md-raised">Submit</md-button>
 
-<!-- Don't need this stuff... from seed app
-  			<md-list>
-			  <md-list-item class="md-2-line">
-			    <md-checkbox aria-label="Material Design" ng-model="item.design" ng-init="item.design = true"></md-checkbox>
-			    <div class="md-list-item-text">
-			    	<img src="/images/soap1.jpg">
-			      <h3><strong>Soap 1</strong></h3>
-			      <p>Beautiful</p>
-			    </div>
-			  </md-list-item>
-			  <md-list-item class="md-2-line">
-			    <md-checkbox aria-label="Treeline" ng-model="item.treeline" ng-init="item.treeline = true"></md-checkbox>
-			    <div class="md-list-item-text">
-			      <h3><strong>Soap 2</strong></h3>
-			      <img src="/images/soap2.jpg">
-			      <p>Nice</p></div>
-			    </div>
-			  </md-list-item>
-			  <md-list-item class="md-2-line">
-			    <md-checkbox aria-label="User management" ng-model="item.user" ng-init="item.user = true"></md-checkbox>
-			    <div class="md-list-item-text">
-			      <h3><strong>Soap 3</strong></h3>
-			      <img src="/images/soap3.jpg">
-			      <p>Amazing</p>
-			    </div>
-			  </md-list-item>
-			</md-list>
--->
-	</md-content>
+  </md-content>
 
 </md-content>
 </body>

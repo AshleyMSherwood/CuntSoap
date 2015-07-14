@@ -15,11 +15,20 @@ angular.module('unicorn')
 function($scope, $rootScope, $state, $timeout, uiMe , uiList, uiErrorBus/*, ngMaterial*/) {
 
 //"choose up to two additives" checkboxes:
-$scope.data = {};
-   $scope.data.cb1 = false;
-   $scope.data.cb2 = false;
-   $scope.data.cb3 = false;
-   $scope.data.cb4 = false;
+  $scope.data = {};
+     $scope.data.cb1 = false;
+     $scope.data.cb2 = false;
+     $scope.data.cb3 = false;
+     $scope.data.cb4 = false;
+
+//dropdown choose color:
+  //  $scope.options = [
+  //     {"val" : 1, "name" : "Blue"},
+  //     {"val" : 2, "name" : "Purple"},
+  //     {"val" : 3, "name" : "Pink"},
+  //     {"val" : 4, "name" : "Red"}
+  // ];
+
 
 }]);
 
