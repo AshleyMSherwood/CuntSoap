@@ -1,80 +1,66 @@
 <!-- List Your Own Soap View-->
-<div flex class="welcome">
+<div flex class="welcome" layout="column">
     <img src="/images/soap.jpg">
     <p class="md-body-1"><strong>{{ uiMe.username || 'Hooray' }}!</strong></p>
   </div>
 
 <h1 class="md-display-2">List Your Own Cunt!!!</h1>
 
-<md-content id="home" layout="row" layout-sm="column">
-  <md-content flex class="why">
-
+<md-content id="home" layout="column" layout-sm="column" flex class="why">
+<!-- ASK NICK: What the hell is "flex class"?? -->
 
 			<p class="md-body-1 lead">Step 2 of 6.  Build Your Soap</p>
-
-<!-- first forms trial: (7/2/15)-->
 <!-- Name and Description fields: -->
-
 <!-- ASK NICK: How do I make it so that this is saved only upon clicking the "submit" button? -->
-	<div layout-sm="column">
-    <!-- ASK NICK: What's this below "md-input-container flex?" -->
+	<div layout-sm="column" layout="column">
+    <form name="nameItForm" ng-model="model.nameItModel" ng-submit="submit()" class="form-control">
+    <!-- ASK NICK: What's "md-input-container flex?" -->
       <md-input-container flex>
         <label>Name It</label>
         <input ng-model="user.firstName">
       </md-input-container>
+    </form>
   </div>
   <div layout-sm="column">
+    <form name="descriptionForm" ng-model="model.descriptionModel" ng-submit="submit()">
       <md-input-container flex>
         <label>Description</label>
         <input ng-model="user.description">
       </md-input-container>
+    </form>
   </div>
 
 <!-- Choose Two Additives checkboxes: -->
   <div class="container" layout="column">
-   <form>
+   <form name="pickForm" ng-model="model.checkboxModel" ng-submit="submit()">
     <fieldset class="standard">
       <legend>Pick up to 2 additives: </legend>
       <div layout="column" layout-wrap>
-        <div flex="50">
-          <md-checkbox ng-model="user.additives.cb1" aria-label="Checkbox 1">
-            Glitters!
-          </md-checkbox>
-        </div>
-        <div flex="50">
-          <md-checkbox ng-model="user.additives.cb2" aria-label="Checkbox 2">
-            Sparkle Dust
-          </md-checkbox>
-        </div>
-        <div flex="50">
-          <md-checkbox ng-model="user.additives.cb3" aria-label="Checkbox 3">
-            Fancy Stuff 
-          </md-checkbox>
-        </div>
-        <div flex="50">
-          <md-checkbox ng-model="user.additives.cb4" aria-label="Checkbox 4">
-            Extra Love
-          </md-checkbox>
-        </div>
+          <input type="checkbox" ng-model="checkboxModel.value1">Oatmeal<br/>
+          <input type="checkbox" ng-model="checkboxModel.value2">Honey<br/>
+          <input type="checkbox" ng-model="checkboxModel.value3">Glitter<br/>
+          <input type="checkbox" ng-model="checkboxModel.value4">Fancy Butt Stuff   
       </div>
     </fieldset>
    </form>
   </div>
 
  <!-- Choose Color Drop Down: -->
-
+  
   <div class="menu-demo-container" layout="column"> Color:
-    <select style="display:inline;" ng-model="model.id">
-      <option style="display:none;" value="" disabled selected>Color:</option>
+    <form name="chooseColorForm" ng-model="model.chooseColor" ng-submit="submit()">
+    <select style="display:inline;" ng-model="model.color">
+      <option style="display:none;" value="" disabled selected>Color</option>
       <option value="red">Red</option>
       <option value="blue">Blue</option>
       <option value="pink">Pink</option>
     </select>
+  </form>
   </div>
-
+  
 <!-- Pick your charity Radio Button -->
   <div class="menu-demo-container" layout="column">
-    <form ng-submit="submit()">
+    <form name="pickColorForm" ng-model="model.pickCharity" ng-submit="submit()">
       <p>Pick Your Charity:</p>
       <md-radio-group ng-model="data.group1">
         <md-radio-button value="C1">National Breast Cancer Research</md-radio-button>
@@ -87,8 +73,6 @@
 
 <!-- Submit Button -->
   <md-button class="md-raised">Submit</md-button>
-
-  </md-content>
 
 </md-content>
 </body>
