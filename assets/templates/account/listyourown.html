@@ -1,5 +1,5 @@
 <!-- List Your Own Soap View-->
-<div flex class="welcome" layout="column">
+<div flex class="welcome" "listyourownclass" layout="column">
     <img src="/images/soap.jpg">
     <p class="md-body-1"><strong>{{ uiMe.username || 'Hooray' }}!</strong></p>
   </div>
@@ -7,14 +7,12 @@
 <h1 class="md-display-2">List Your Own Cunt!!!</h1>
 
 <md-content id="home" layout="column" layout-sm="column" flex class="why">
-<!-- ASK NICK: What the hell is "flex class"?? -->
 
 			<p class="md-body-1 lead">Step 2 of 6.  Build Your Soap</p>
 <!-- Name and Description fields: -->
 <!-- ASK NICK: How do I make it so that this is saved only upon clicking the "submit" button? -->
 	<div layout-sm="column" layout="column">
     <form name="nameItForm" ng-model="model.nameItModel" ng-submit="submit()" class="form-control">
-    <!-- ASK NICK: What's "md-input-container flex?" -->
       <md-input-container flex>
         <label>Name It</label>
         <input ng-model="user.firstName">

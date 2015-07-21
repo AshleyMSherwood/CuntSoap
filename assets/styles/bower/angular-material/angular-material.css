@@ -6628,6 +6628,7 @@ md-toolbar {
     font-weight: inherit;
     margin: inherit; }
   .md-toolbar-tools a {
+    margin-bottom: 10px;
     color: inherit;
     text-decoration: none; }
   .md-toolbar-tools .fill-height {

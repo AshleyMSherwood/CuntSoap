@@ -1,6 +1,4 @@
-
 .productsClass {
-
 	display: inline-block;
 	vertical-align: top;
 	height: 350px;
@@ -10,19 +8,44 @@
 	background-position: center center;
 	/*padding: 100%;*/
 	position: relative;
-
+	overflow-x: hidden;
+	overflow-y: hidden;
 }
 
-a {
-	position: absolute; 
-    bottom: 0; 
-
+div.productTitleAndCharity {
+	position: relative;
+	top: 330px;
+  	border: 3px solid black;
+  	width: 100%;
+  	height: 100%;
 }
+
+div.moveTitle{
+	transition: all 2s ease-in-out;
+	top: 0px;
+}
+
+/*div.moveTitle:hover #slide {
+	transition: 1s;
+	position: relative;
+	top: 5px;
+}*/
+
+/*div.doNotShowCharity{
+	display: none;
+}
+div.showCharity{
+	display: block;
+}*/
 
 .productDescription {
 	background: white;
 	color: orange;
-	position: absolute; 
     bottom: 0; 
+    text-align: left;
+    z-index: 2;
+}
+p.showDescription {
+    visibility: visible;
 }
 

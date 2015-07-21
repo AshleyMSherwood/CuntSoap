@@ -15,9 +15,15 @@ angular.module('unicorn')
         '$scope', '$rootScope', '$state', '$timeout', 'uiMe', 'uiList', 'uiErrorBus', 'uiProducts',
 function($scope, $rootScope, $state, $timeout, uiMe , uiList, uiErrorBus, uiProducts) {
 
-  //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
-  // When the application is initially rendered
-  //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
+// $scope.hover= false;
+// $scope.showdescription= false;
+// $scope.showcharity= false;
+
+//   $scope.showDetails = function(){
+//     $scope.hover= true;
+//     $scope.showdescription= true;
+//     $scope.showcharity= true;
+//   }
 
   $scope.uiProducts = uiProducts;
 

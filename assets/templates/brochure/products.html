@@ -1,19 +1,11 @@
-
-<head>
-<link rel="stylesheet" type="text/css" href="products.css">
-</head>
-
-<body ng-app="">
+<body>
 <h1>Products</h1>
 
 	<div class="productsClass" ng-repeat="product in uiProducts | limitTo: 8" ng-style="{'background-image':'url({{product.photoUrl}})'}" style="background-repeat: no-repeat">
-<!-- 		<img class="imageClass" src="{{product.photoUrl}}" alt="{{product.id}}"> -->
-		
-		<p ng-show="showme" class="productDescription"> <button ng-click="showme=false">x</button>
-			{{product.description}} 
-		</p>
-		<a href="" ng-click="showme=true"><b>{{product.title}}</b></a> 
+		<div id="slide" class="productTitleAndCharity" ng-class="{moveTitle: hover}" ng-mouseenter="hover=true" ng-mouseleave="hover=false">
+			<div>{{product.title}}</div>
+			<div class="doNotShowCharity">{{product.charity}}</div>
+			<div class="productDescription">{{product.description}}</div>
+		</div>
 	</div>
-
 </body>
-
