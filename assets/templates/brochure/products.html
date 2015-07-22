@@ -2,10 +2,11 @@
 <h1>Products</h1>
 
 	<div class="productsClass" ng-repeat="product in uiProducts | limitTo: 8" ng-style="{'background-image':'url({{product.photoUrl}})'}" style="background-repeat: no-repeat">
-		<div id="slide" class="productTitleAndCharity" ng-class="{moveTitle: hover}" ng-mouseenter="hover=true" ng-mouseleave="hover=false">
-			<div>{{product.title}}</div>
-			<div class="doNotShowCharity">{{product.charity}}</div>
-			<div class="productDescription">{{product.description}}</div>
+		<div class="productTitleAndCharity" ng-class="{moveTitleBox: hover}" ng-mouseenter="hover=true" ng-click="hover = !hover">
+			<h2>{{product.title}}</h2>
+			<h4>{{product.charity}}</h4>
+<!-- 			<button ng-click= "alertaddToCart? function?"> Add to Cart </button> just thinking of the future-->
+			<div class="productDescription"><p>{{product.description}}</p></div>
 		</div>
 	</div>
 </body>

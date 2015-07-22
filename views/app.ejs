@@ -29,8 +29,7 @@
     <md-button class="md-accent nav-link" ui-sref="profile" ng-if="uiMe.id">Profile</md-button>
     <md-button class="md-accent nav-link" ui-sref="listyourown" ng-if="uiMe.id">List Your Own</md-button>
     <md-button class="md-accent nav-link" ng-click="intent.logout()" ng-if="uiMe.id">Logout</md-button>
-    <md-button class="md-accent nav-link" ui-sref="login" ng-if="!uiMe.id">Login</md-button>
-    <md-button class="md-accent nav-link" ui-sref="signup" ng-if="!uiMe.id">Sign Up</md-button>
+    
 
     <md-divider></md-divider>
 
@@ -68,6 +67,7 @@
           <h3 class="md-display-1">{{ uiMe.username }}</h3>
           <p class="md-body-2">{{ uiMe.email }}</p>
         </div>
+        <md-button class="md-raised md-accent" ng-click="intent.logout()" ng-if="uiMe.id">Logout</md-button>
       </md-content>
     </span>
     <span ng-if="!uiMe.id" layout="column" class="no-user">
