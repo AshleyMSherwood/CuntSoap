@@ -2,35 +2,36 @@
  * Homepage styling
  */
 body {
-  background-image: url("/images/DeathtoStock_Clementine1.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background: url(/images/DeathtoStock_Clementine1.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  background-color: #464646;
+  background-attachment: fixed;
 }
 
-// #backgroundimage{
-//     display: inline-block;
-//     width: 100%;
-//     font-size: 0;
-//     line-height: 0;
-//     vertical-align: middle;
-//     background-size: 100%;
-//     background-position: 50% 50%;
-//     background-repeat: no-repeat;
-//     background-image: url("/images/DeathtoStock_Clementine1.jpg"); 
-// }
-//    	@media only screen and (max-width: 320px) {
-// 		#backgroundimage { 
-//         	background-image: url(smallimage.jpg); 
-//             }
-//         }
+@media only screen and (max-width: 767px) {
+  body {
+    background-image: url(/images/DeathtoStock_Clementine1_small767px.jpg);
+  }
+}
+
+@media only screen and (max-height: 265px) {
+  body {
+    overflow: hidden;
+  }
+}
+
+
 #homePageHeader{
 	color: red;
 	text-align: center;
 	width: 100%;
+}
 
+#landingpagecopy{
+  color: green;
+  margin: 20px; 
 }
 
 // #home{
