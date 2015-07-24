@@ -1,0 +1,51 @@
+@media only screen and (max-height: 550px) {
+div #containshomepageheader{
+  margin-top: 7%;
+  }
+}
+
+@media only screen and (max-height: 420px) {
+div #containshomepageheader{
+  margin-top: 2%;
+  }
+div #homePageHeader{
+  margin-top: 5%; 
+  }
+}
+
+@media only screen and (max-height: 319px) {
+div #containshomepageheader{
+  margin-top: 0%;
+  }
+div #homePageHeader{
+  margin-top: 3%; 
+  }
+}
+
+#containshomepageheader{
+  background-color: rgb(103,58,183);
+  border-radius: 10px;
+  width: 75%;
+  margin-left: 12%;
+  margin-top: 5%;
+  padding-bottom: 4%;
+  opacity: .9;
+}
+
+#homePageHeader{
+  background-color: #585858;
+  border-radius: 10px;
+  color: white;
+	text-align: center;
+	width: 90%;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+#landingpagecopy{
+  margin: 20px; 
+}
+
+#waitlistform{
+  padding-bottom: 10px;
+}
