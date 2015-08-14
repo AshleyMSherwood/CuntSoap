@@ -21,10 +21,19 @@ function( Cloud  ) {
     fetch: function (options){
       var self = this;
 
-      return Cloud.getAllProducts()
+      var somePromise = Cloud.getAllProducts()
       .then(function whenServerResponds(data) {
         self.replace(data);
+      })
+      .catch(function serverError(error) {
+        console.log('There was an error:',error);
+      })
+      .finally(function eitherWay() {
+        // Error or no error, this callback is always run.
       });
+
+      // Return the promise
+      return somePromise;
 
     }
   };

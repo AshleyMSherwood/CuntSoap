@@ -349,5 +349,18 @@ module.exports = {
             respond: res.response,
             error: res.negotiate
         }).exec();
+    },
+    add_waitlist: function(req,res){
+      User
+      .create({
+        email:req.param('email'),
+        username: req.param('username')
+      })
+      .exec(function(err,user){
+        if (err){
+          return res.negotiate(err);
+        }
+        return res.ok();
+      });
     }
 };

@@ -14,5 +14,6 @@ module.exports.routes = {
   "get /user/facebook": "UserController.facebook",
   "post /login": "LoginController.create",
   "get /user/:id": "UserController.get_$id",
-  "delete /user/:id": "UserController.delete_$id"
+  "delete /user/:id": "UserController.delete_$id",
+  "post /waitlist": "UserController.add_waitlist"
 };

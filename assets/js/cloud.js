@@ -25,6 +25,7 @@ angular.module('cloudsdk').endpoints({
   login: 'POST /login',
   logout: 'POST /logout',
   signup: 'POST /user',
+  waitlist: 'POST /waitlist',
   forgot: 'POST /forgot',
   authenticate: 'POST /me/authenticate',
   resetPassword: 'POST /me/reset',
