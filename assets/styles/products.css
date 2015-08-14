@@ -26,6 +26,10 @@
 h1 hover{
 
 }
+.moveTitleBoxDown{
+	transition: all .6s ease-in-out;
+	top: 320px;
+}
 
 div.productDescription {
 	position: absolute;
@@ -42,5 +46,4 @@ div.productDescription p{
 	color: black;
 	padding: 5px;
 }
-
 
