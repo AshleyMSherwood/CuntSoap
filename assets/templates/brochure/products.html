@@ -1,5 +1,7 @@
-<body>
 <h1>Products</h1>
+
+	<div ng-include="'templates/brochure/products-toolbar.html'"> LOOK AT ME IM A DIV </div>
+
 	<div class="productsClass" ng-repeat="product in uiProducts | limitTo: 8" ng-style="{'background-image':'url({{product.photoUrl}})'}" style="background-repeat: no-repeat">
 		<div class="productTitleAndCharity" ng-class="{moveTitleBox: hover, moveTitleBoxDown: !hover}" ng-mouseenter="hover=true" ng-mouseleave="hover=false">
 			<h2>{{product.title}}</h2>
@@ -8,4 +10,4 @@
 			<div class="productDescription"><p>{{product.description}}</p></div>
 		</div>
 	</div>
-</body>
+
