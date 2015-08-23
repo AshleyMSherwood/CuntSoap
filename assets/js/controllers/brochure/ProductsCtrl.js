@@ -15,20 +15,24 @@ angular.module('unicorn')
         '$scope', '$rootScope', '$state', '$timeout', 'uiMe', 'uiList', 'uiErrorBus', 'uiProducts',
 function($scope, $rootScope, $state, $timeout, uiMe , uiList, uiErrorBus, uiProducts) {
 
-// $scope.hover= false;
-// $scope.showdescription= false;
-// $scope.showcharity= false;
-
-//   $scope.showDetails = function(){
-//     $scope.hover= true;
-//     $scope.showdescription= true;
-//     $scope.showcharity= true;
-//   }
+  $scope.fragrances = [];
+  // use google to find out how to check and see if a string already exists on an array
+  $scope.showThisFragrance = "";
+  $scope.charities = ["charity string"];
+  $scope.additives = ["additives string"];
 
   $scope.uiProducts = uiProducts;
 
   uiProducts.fetch()
   .then(function gotProducts(){
+
+  var a=uiProducts; 
+  for (var x=0; x<a.length; x++) { 
+    if(a[x].fragrance[0]) {
+      $scope.fragrances.push(a[x].fragrance[0]); 
+    }
+  };
+
 
     // do something
 
@@ -41,6 +45,10 @@ function($scope, $rootScope, $state, $timeout, uiMe , uiList, uiErrorBus, uiProd
     // do something
   });
 
+  $scope.filterBy= function (oneObject) {
+    console.log(oneObject);
+    return 
+  };
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
   // DOM Events
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//

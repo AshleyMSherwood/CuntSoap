@@ -7,8 +7,8 @@
 /* mixin definition ; sets LTR and RTL within the same style call */
 html, body {
   height: 100%;
-  color: rgba(0, 0, 0, 0.87);
-  background: white;
+/*  color: rgba(0, 0, 0, 0.87);
+  background: white;*/
   position: relative; }
 
 body {

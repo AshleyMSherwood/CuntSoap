@@ -1,22 +1,14 @@
+<div ng-controller="ProductsCtrl">
 <form>
-	<label>Ingredients <select name="Ingredients"> </label>
-		<option value="volvo">Volvo</option>
-		<option value="saab">Saab</option>
-		<option value="fiat">Fiat</option>
-		<option value="audi">Audi</option>
+	<label>Fragrance {{showThisFragrance}}<select ng-model="showThisFragrance" name="Fragrance"> </label>
+		<option ng-click="showThisFragrance=fragrance" ng-value="fragrance" ng-repeat="fragrance in fragrances track by $index">{{fragrance}}</option>
 	</select>
 	<label>Charity <select name="Charity"></label>
 		<option value="volvo">Volvo</option>
-		<option value="saab">Saab</option>
-		<option value="fiat">Fiat</option>
-		<option value="audi">Audi</option>
 	</select>
 	<label>Additives <select name="Additives"></label>
 		<option value="volvo">Volvo</option>
-		<option value="saab">Saab</option>
-		<option value="fiat">Fiat</option>
-		<option value="audi">Audi</option>
 	</select>
-	<br><br>
-	<input type="submit">
+
 </form>
+</div>
