@@ -12,8 +12,10 @@
 
 angular.module('unicorn')
 .controller('ProductsCtrl', [
-        '$scope', '$rootScope', '$state', '$timeout', 'uiMe', 'uiList', 'uiErrorBus', 'uiProducts',
-function($scope, $rootScope, $state, $timeout, uiMe , uiList, uiErrorBus, uiProducts) {
+        '$scope', '$rootScope', '$state', '$timeout', 'uiMe', 'uiList', 'uiErrorBus', 'uiProducts', 'productControls',
+function($scope, $rootScope, $state, $timeout, uiMe , uiList, uiErrorBus, uiProducts, productControls) {
+  $scope.productControls = productControls;
+window.productControls = $scope.productControls;
 
   $scope.fragrances = [];
   // use google to find out how to check and see if a string already exists on an array
@@ -26,10 +28,10 @@ function($scope, $rootScope, $state, $timeout, uiMe , uiList, uiErrorBus, uiProd
   uiProducts.fetch()
   .then(function gotProducts(){
 
-  var a=uiProducts; 
-  for (var x=0; x<a.length; x++) { 
+  var a=uiProducts;
+  for (var x=0; x<a.length; x++) {
     if(a[x].fragrance[0]) {
-      $scope.fragrances.push(a[x].fragrance[0]); 
+      $scope.fragrances.push(a[x].fragrance[0]);
     }
   };
 
@@ -47,7 +49,7 @@ function($scope, $rootScope, $state, $timeout, uiMe , uiList, uiErrorBus, uiProd
 
   $scope.filterBy= function (oneObject) {
     console.log(oneObject);
-    return 
+    return
   };
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
   // DOM Events

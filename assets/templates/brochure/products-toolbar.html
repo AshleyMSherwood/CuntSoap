@@ -1,7 +1,7 @@
-<div ng-controller="ProductsCtrl">
+<div ng-controller="ProductsCtrl"> show:{{productControls}}
 <form>
-	<label>Fragrance {{showThisFragrance}}<select ng-model="showThisFragrance" name="Fragrance"> </label>
-		<option ng-click="showThisFragrance=fragrance" ng-value="fragrance" ng-repeat="fragrance in fragrances track by $index">{{fragrance}}</option>
+	<label>Fragrance {{showThisFragrance}}</label><select ng-model="productControls.key" name="Fragrance">
+		<option ng-repeat="fragrance in fragrances track by $index" ng-value="fragrance">{{fragrance}}</option>
 	</select>
 	<label>Charity <select name="Charity"></label>
 		<option value="volvo">Volvo</option>
