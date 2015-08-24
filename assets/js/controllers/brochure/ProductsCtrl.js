@@ -14,6 +14,7 @@ angular.module('unicorn')
 .controller('ProductsCtrl', [
         '$scope', '$rootScope', '$state', '$timeout', 'uiMe', 'uiList', 'uiErrorBus', 'uiProducts', 'productControls',
 function($scope, $rootScope, $state, $timeout, uiMe , uiList, uiErrorBus, uiProducts, productControls) {
+  
   $scope.productControls = productControls;
 window.productControls = $scope.productControls;
 

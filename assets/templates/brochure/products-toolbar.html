@@ -1,7 +1,11 @@
 <div ng-controller="ProductsCtrl"> show:{{productControls}}
 <form>
-	<label>Fragrance {{showThisFragrance}}</label><select ng-model="productControls.key" name="Fragrance">
-		<option ng-repeat="fragrance in fragrances track by $index" ng-value="fragrance">{{fragrance}}</option>
+	<label for="fragranceSelect">Fragrance</label>
+	<select name="fragranceSelect" ng-model="productControls.key">
+		<option ng-repeat="fragrance in fragrances track by $index" ng-value="{{$scope.fragrance}}">{{fragrance}}</option>
+		<!-- ng-value isnt working at all. its pulling the value from the text -->
+		<option value=""></option>
+		<option ng-value="fragrance">All</option>
 	</select>
 	<label>Charity <select name="Charity"></label>
 		<option value="volvo">Volvo</option>
