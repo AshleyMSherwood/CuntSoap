@@ -1,18 +1,17 @@
-<div ng-controller="ProductsCtrl"> show:{{productControls}}
+<div ng-controller="ProductsCtrl"> show:{{productControlsFactory}}
 <form>
 	<label for="fragranceSelect">Fragrance</label>
-	<select name="fragranceSelect" ng-model="productControls.key">
-		<option ng-repeat="fragrance in fragrances track by $index" ng-value="{{$scope.fragrance}}">{{fragrance}}</option>
+	<select name="fragranceSelect" ng-model="productControlsFactory.fragranceFilter">
+		<option value="All">All</option>
+		<option ng-repeat="fragrance in fragrances track by $index" value="{{fragrance}}">{{fragrance}}</option>
 		<!-- ng-value isnt working at all. its pulling the value from the text -->
-		<option value=""></option>
-		<option ng-value="fragrance">All</option>
 	</select>
-	<label>Charity <select name="Charity"></label>
-		<option value="volvo">Volvo</option>
+	<label for="charitySelect">Charity</label>
+	<select name="charitySelect" ng-model="productControlsFactory.charityFilter">
+		<option ng-value="{{charity}}">All</option>
+		<option ng-repeat="charity in charities track by $index" value="{{charity}}">{{charity}}</option>
+		<!-- ng-value isnt working at all. its pulling the value from the text -->
 	</select>
-	<label>Additives <select name="Additives"></label>
-		<option value="volvo">Volvo</option>
-	</select>
-
+<!-- filter by 3rd thing?  color? not currently a key on the objects -->
 </form>
 </div>

@@ -12,16 +12,16 @@
 
 angular.module('unicorn')
 .controller('ProductsCtrl', [
-        '$scope', '$rootScope', '$state', '$timeout', 'uiMe', 'uiList', 'uiErrorBus', 'uiProducts', 'productControls',
-function($scope, $rootScope, $state, $timeout, uiMe , uiList, uiErrorBus, uiProducts, productControls) {
+        '$scope', '$rootScope', '$state', '$timeout', 'uiMe', 'uiList', 'uiErrorBus', 'uiProducts', 'productControlsFactory',
+function($scope, $rootScope, $state, $timeout, uiMe , uiList, uiErrorBus, uiProducts, productControlsFactory) {
   
-  $scope.productControls = productControls;
-window.productControls = $scope.productControls;
+  $scope.productControlsFactory = productControlsFactory;
+window.productControlsFactory = $scope.productControlsFactory;
 
   $scope.fragrances = [];
   // use google to find out how to check and see if a string already exists on an array
   $scope.showThisFragrance = "";
-  $scope.charities = ["charity string"];
+  $scope.charities = [];
   $scope.additives = ["additives string"];
 
   $scope.uiProducts = uiProducts;
@@ -29,13 +29,20 @@ window.productControls = $scope.productControls;
   uiProducts.fetch()
   .then(function gotProducts(){
 
-  var a=uiProducts;
-  for (var x=0; x<a.length; x++) {
-    if(a[x].fragrance[0]) {
-      $scope.fragrances.push(a[x].fragrance[0]);
+  for (var x=0; x<uiProducts.length; x++) {
+    if(uiProducts[x].fragrance[0]) {
+      $scope.fragrances.push(uiProducts[x].fragrance[0]);
     }
   };
 
+  for (var x=0; x<uiProducts.length; x++) {
+    console.log(uiProducts[x].charity);
+    if(uiProducts[x].charity) {
+      if($scope.charities.indexOf(uiProducts[x].charity) === -1) {
+        $scope.charities.push(uiProducts[x].charity);
+      }
+    }
+  };
 
     // do something
 
