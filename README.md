@@ -1,4 +1,4 @@
-# Cunt Soap
+# C Soap
 
 ### SPA for C Soap
 
